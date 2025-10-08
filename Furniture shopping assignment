@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Furniture Haven</title>
+  <title>Furniture Palace</title>
   <style>
     table, th, td {
       border: 1px solid #444;
@@ -25,7 +25,7 @@
 <body>
 
   <header>
-    <h1>Furniture Haven</h1>
+    <h1>Furniture Palace</h1>
     <nav>
       <a href="#features">Features</a>
       <a href="#products">Products</a>
@@ -36,7 +36,7 @@
 
   <main>
     <section>
-      <h2>Welcome to Furniture Haven</h2>
+      <h2>Welcome to Furniture Palace</h2>
       <p>Discover stylish, affordable furniture for every room in your home.</p>
       <img src="sofa.jpg" alt="Modern Sofa" width="300">
     </section>
