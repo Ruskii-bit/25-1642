@@ -2,96 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Furniture Palace</title>
+  <title>Modern Furniture Shopping</title>
   <style>
-    table, th, td {
-      border: 1px solid #444;
-      border-collapse: collapse;
-      padding: 8px;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
     }
-    caption {
-      font-weight: bold;
-      margin-bottom: 5px;
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
-    header, footer {
-      background-color: #f2f2f2;
-      padding: 10px;
+
+    h1 {
+      margin: 0;
     }
-    nav a {
-      margin-right: 15px;
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .video-section {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+
+    iframe {
+      width: 80%;
+      height: 450px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Furniture Palace</h1>
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#products">Products</a>
-      <a href="#video">Tutorial</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Modern Furniture Shopping</h1>
+    <p>Discover stylish pieces for every room</p>
   </header>
 
-  <main>
-    <section>
-      <h2>Welcome to Furniture Palace</h2>
-      <p>Discover stylish, affordable furniture for every room in your home.</p>
-      <img src="sofa.jpg" alt="Modern Sofa" width="300">
-    </section>
+  <section class="gallery">
+    <img src="https://www.behance.net/gallery/177225885/Modern-Furniture-Ecommerce-Store-Design" alt="Furniture Design 1">
+    <img src="https://www.crateandbarrel.com/furniture/" alt="Furniture Design 2">
+    <img src="https://www.cb2.com/" alt="Furniture Design 3">
+  </section>
 
-    <section id="features">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Living Room Sets</li>
-        <li>Bedroom Furniture</li>
-        <li>Office Desks</li>
-        <li>Dining Tables</li>
-        <li>Outdoor Furniture</li>
-      </ul>
-    </section>
+  <section class="video-section">
+    <h2>Watch Our Promo Video</h2>
+    <p>Explore our latest collections and offers</p>
+    <iframe src="https://www.youtube.com/embed/f_cUtMpfxP0?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </section>
 
-    <section id="products">
-      <h2>Product Showcase</h2>
-      <table>
-        <caption>Top Picks</caption>
-        <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Rating</th>
-        </tr>
-        <tr>
-          <td>Leather Sofa</td>
-          <td>kshs6500</td>
-          <td>★★★★☆</td>
-        </tr>
-        <tr>
-          <td>Wooden Dining Table</td>
-          <td>kshs12000</td>
-          <td>★★★★★</td>
-        </tr>
-        <tr>
-          <td>Ergonomic Office Chair</td>
-          <td>kshs6000</td>
-          <td>★★★★☆</td>
-        </tr>
-      </table>
-    </section>
-
-    <section id="video">
-      <h2>Assembly Tutorial</h2>
-      <video src="assembly-tutorial.mp4" controls width="500"></video>
-      <p>This video walks you through assembling our bestselling dining table in under 20 minutes.</p>
-    </section>
-  </main>
-
-  <aside>
-    <p>Visit our <a href="https://github.com/yourusername">GitHub page</a> for source code and updates.</p>
-  </aside>
-
-  <footer id="contact">
-    <p>Contact us: info@furniturehaven.com | &copy; 2025 Furniture Haven</p>
+  <footer>
+    &copy; 2025 Modern Furniture Co. | Designed for style & comfort
   </footer>
 
 </body>
