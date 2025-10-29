@@ -6,3 +6,75 @@ alt="A picture with two doors" usemap="#two-doors">
   <area shape="rect" title="A door with a white knob" coords="80,80,275,450" href="https://example.com/option1" alt="Open the door to Option 1">
   <area shape="rect" title="A door with a black knob" coords="540,75,745,460" href="https://example.com/option2" alt="Open the door to Option 2">
 </map>
+
+
+<style>
+  .responsive-map {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" 
+     usemap="#goldmap" 
+     class="responsive-map" 
+     alt="Gold Bars">
+
+<map name="goldmap">
+  <area shape="poly" coords="100,150,200,100,300,150,250,250,150,250" href="https://en.wikipedia.org/wiki/Gold_bar" alt="Gold Bar Info" target="_blank">
+</map>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find the Hidden Gem</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .responsive-map {
+      max-width: 100%;
+      height: auto;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🕵️ Find the Hidden Gem!</h2>
+  <p>Click on the hidden gem in the image below to win.</p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg" 
+       usemap="#gameMap" 
+       class="responsive-map" 
+       alt="Scenic Landscape">
+
+  <map name="gameMap">
+    <!-- Hidden gem area -->
+    <area shape="circle" coords="500,300,30" href="javascript:void(0);" alt="Gem" onclick="foundGem()">
+    <!-- Decoy areas -->
+    <area shape="rect" coords="100,100,200,200" href="javascript:void(0);" alt="Decoy" onclick="wrongClick()">
+    <area shape="rect" coords="300,400,400,500" href="javascript:void(0);" alt="Decoy" onclick="wrongClick()">
+  </map>
+
+  <div id="message"></div>
+
+  <script>
+    function foundGem() {
+      document.getElementById("message").textContent = "🎉 You found the hidden gem! Well done!";
+    }
+    function wrongClick() {
+      document.getElementById("message").textContent = "❌ Nope, that's not the gem. Try again!";
+    }
+  </script>
+
+</body>
+</html>
