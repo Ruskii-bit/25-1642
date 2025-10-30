@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maikikistitches</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
 
+    header {
+      background: linear-gradient(to right, #ff6f61, #ffb347);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1612197524245-9e6c6e3d9f7d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .story {
+      background-color: #ffe5ec;
+      border-left: 6px solid #ff6f61;
+    }
+
+    .gallery {
+      background-color: #f0faff;
+    }
+
+    .gallery .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .terms {
+      background-color: #fff0d6;
+      border-left: 6px solid #ffb347;
+    }
+
+    .terms ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
+    .contact {
+      background-color: #e0ffe0;
+      border-left: 6px solid #4caf50;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background-color: white;
+      border: 3px solid #ff6f61;
+      padding: 2rem;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .popup-content {
+      text-align: center;
+    }
+
+    .popup .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Pop-up -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+      <h2>Karibu Maikikistitches!</h2>
+      <p>Thrifted. Classy. Kenyan. Fashion that tells your story.</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>Maikikistitches</h1>
+    <nav>
+      <a href="#story">Our Story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#terms">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Fashion that speaks your truth</h2>
+    <p>Street style meets elegance. Designed for the bold Kenyan woman.</p>
+  </section>
+
+  <!-- Our Story -->
+  <section id="story" class="story">
+    <h2>Our Story</h2>
+    <p>
+      At Maikikistitches, fashion is more than clothing—it’s a language of self-expression, confidence, and individuality.
+      What began as a small dream with fabric, a needle, and a passion for style has grown into a brand that celebrates creativity, craftsmanship, and culture.
+    </p>
+    <p>
+      Each piece is thoughtfully designed to blend street style, chic elegance, and timeless class. We believe in fashion that tells a story—your story.
+      Every collection is inspired by real moments, real people, and the art of turning everyday wear into something extraordinary.
+    </p>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <h2>Thrifted & Classy Looks</h2>
+    <div class="grid">
+      <img src="https://images.unsplash.com/photo-1603252109361-3e3f9e3e3e3e?auto=format&fit=crop&w=800&q=80" alt="Kitenge streetwear" />
+      <img src="https://images.unsplash.com/photo-1612197524245-9e6c6e3d9f7d?auto=format&fit=crop&w=800&q=80" alt="Maasai inspired chic" />
+      <img src="https://images.unsplash.com/photo-1585386959984-a415522b831c?auto=format&fit=crop&w=800&q=80" alt="Thrifted denim fusion" />
+      <img src="https://images.unsplash.com/photo-1593032465175-7b6f6f6f6f6f?auto=format&fit=crop&w=800&q=80" alt="Urban Kitenge blend" />
+    </div>
+  </section>
+
+  <!-- Terms of Service -->
+  <section id="terms" class="terms">
+    <h2>Terms of Service</h2>
+    <ul>
+      <li>You must be at least 13 years old to use our site.</li>
+      <li>Use the site lawfully and respectfully.</li>
+      <li>All content is property of Maikikistitches.</li>
+      <li>Prices and availability may change without notice.</li>
+      <li>Orders require full payment before delivery.</li>
+      <li>Shipping times vary; we’re not liable for delays.</li>
+      <li>Adjustments accepted within 3 days of delivery.</li>
+      <li>Custom and sale items are final sale.</li>
+      <li>Privacy governed by our Privacy Policy.</li>
+      <li>Terms may be updated anytime.</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📞 +254 757 424 922</p>
+    <p>📍 Nairobi, Kenya</p>
+    <p>Email: <a href="mailto:hello@maikikistitches.com">hello@maikikistitches.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Maikikistitches. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.onload = () => {
+      document.getElementById('popup').style.display = 'block';
+    };
+  </script>
+</body>
+</html>
