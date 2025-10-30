@@ -10,6 +10,7 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #fff8f0;
       color: #333;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -17,6 +18,9 @@
       color: white;
       padding: 1.5rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav a {
@@ -55,15 +59,10 @@
       margin: auto;
     }
 
-    .story {
-      background-color: #ffe5ec;
-      border-left: 6px solid #ff6f61;
-      animation: fadeIn 1s ease-in;
-    }
-
-    .gallery {
-      background-color: #f0faff;
-    }
+    .story { background-color: #ffe5ec; border-left: 6px solid #ff6f61; }
+    .gallery { background-color: #f0faff; }
+    .terms { background-color: #fff0d6; border-left: 6px solid #ffb347; }
+    .contact { background-color: #e0ffe0; border-left: 6px solid #4caf50; }
 
     .gallery .grid {
       display: grid;
@@ -82,19 +81,37 @@
       transform: scale(1.05);
     }
 
-    .terms {
-      background-color: #fff0d6;
-      border-left: 6px solid #ffb347;
-    }
-
     .terms ul {
       list-style-type: square;
       padding-left: 1.5rem;
     }
 
-    .contact {
-      background-color: #e0ffe0;
-      border-left: 6px solid #4caf50;
+    .cart {
+      background-color: #fef6e4;
+      border-left: 6px solid #ff6f61;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .checkout-form input, .checkout-form select {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .checkout-form button {
+      background-color: #ff6f61;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     footer {
@@ -132,18 +149,9 @@
       cursor: pointer;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
     @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 1.8rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+      .hero h2 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -163,6 +171,7 @@
     <nav>
       <a href="#story">Our Story</a>
       <a href="#gallery">Gallery</a>
+      <a href="#cart">Cart</a>
       <a href="#terms">Terms</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -177,25 +186,48 @@
   <!-- Our Story -->
   <section id="story" class="story">
     <h2>Our Story</h2>
-    <p>
-      At Maikikistitches, fashion is more than clothing—it’s a language of self-expression, confidence, and individuality.
-      What began as a small dream with fabric, a needle, and a passion for style has grown into a brand that celebrates creativity, craftsmanship, and culture.
-    </p>
-    <p>
-      Each piece is thoughtfully designed to blend street style, chic elegance, and timeless class. We believe in fashion that tells a story—your story.
-      Every collection is inspired by real moments, real people, and the art of turning everyday wear into something extraordinary.
-    </p>
+    <p>At Maikikistitches, fashion is more than clothing—it’s a language of self-expression, confidence, and individuality.</p>
+    <p>Each piece is thoughtfully designed to blend street style, chic elegance, and timeless class. We believe in fashion that tells a story—your story.</p>
   </section>
 
   <!-- Gallery -->
   <section id="gallery" class="gallery">
     <h2>Thrifted & Classy Looks</h2>
     <div class="grid">
-      <img src="https://lucyrootsdenim.com/cdn/shop/products/ankara-leather-ankh-jean-skirt-plus-size-18.jpg" alt="Thrifted denim fusion" />
-      <img src="https://afroculture.net/wp-content/uploads/2017/03/maasai-shuka.jpg" alt="Maasai inspired fashion" />
-      <img src="https://www.hindustantimes.com/ht-img/img/2023/10/15/1600x900/Kibera_Fashion_Week_1697460491589_1697460510564.jpg" alt="Urban Nairobi fashion" />
-      <img src="https://www.vogue.com/images/kenyan-cool-girl-guide.jpg" alt="Kenyan street style" />
+      <div>
+        <img src="https://lucyrootsdenim.com/cdn/shop/products/ankara-leather-ankh-jean-skirt-plus-size-18.jpg" alt="Denim fusion" />
+        <button onclick="addToCart('Ankara Denim Skirt', 2500)">Add to Cart - Ksh 2500</button>
+      </div>
+      <div>
+        <img src="https://afroculture.net/wp-content/uploads/2017/03/maasai-shuka.jpg" alt="Maasai fashion" />
+        <button onclick="addToCart('Maasai Shuka Wrap', 1800)">Add to Cart - Ksh 1800</button>
+      </div>
+      <div>
+        <img src="https://www.hindustantimes.com/ht-img/img/2023/10/15/1600x900/Kibera_Fashion_Week_1697460491589_1697460510564.jpg" alt="Urban fashion" />
+        <button onclick="addToCart('Urban Kitenge Dress', 3200)">Add to Cart - Ksh 3200</button>
+      </div>
     </div>
+  </section>
+
+  <!-- Cart -->
+  <section id="cart" class="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p><strong>Total:</strong> Ksh <span id="cart-total">0</span></p>
+  </section>
+
+  <!-- Checkout -->
+  <section class="checkout-form">
+    <h2>Checkout</h2>
+    <input type="text" id="name" placeholder="Full Name" required />
+    <input type="text" id="phone" placeholder="Phone Number" required />
+    <select id="location">
+      <option value="">Select Delivery Location</option>
+      <option value="Nairobi">Nairobi (Pickup Mtaani)</option>
+      <option value="Other">Other Counties (Matatu Shuttle)</option>
+    </select>
+    <button onclick="submitOrder()">Place Order</button>
+    <p id="confirmation" style="color: green; font-weight: bold;"></p>
   </section>
 
   <!-- Terms of Service -->
@@ -203,35 +235,7 @@
     <h2>Terms of Service</h2>
     <ul>
       <li>You must be at least 13 years old to use our site.</li>
-      <li>Use the site lawfully and respectfully.</li>
-      <li>All content is property of Maikikistitches.</li>
-      <li>Prices and availability may change without notice.</li>
-      <li>Orders require full payment before delivery.</li>
-      <li>Shipping times vary; we’re not liable for delays.</li>
-      <li>Adjustments accepted within 3 days of delivery.</li>
-      <li>Custom and sale items are final sale.</li>
-      <li>Privacy governed by our Privacy Policy.</li>
-      <li>Terms may be updated anytime.</li>
-    </ul>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>📞 +254 757 424 922</p>
-    <p>📍 Nairobi, Kenya</p>
-    <p>Email: <a href="mailto:hello@maikikistitches.com">hello@maikikistitches.com</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Maikikistitches. All rights reserved.</p>
-  </footer>
-
-  <script>
-    window.onload = () => {
-      document.getElementById('popup').style.display = 'block';
-    };
+      <li>Use the site lawfully[43dcd9a7-70db-4a1f-b0ae-981daa162054]
   </script>
 </body>
 </html>
