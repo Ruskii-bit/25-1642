@@ -24,10 +24,15 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #333;
     }
 
     .hero {
-      background: url('https://images.unsplash.com/photo-1612197524245-9e6c6e3d9f7d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background: url('https://www.vogue.com/images/kenyan-cool-girl-guide.jpg') center/cover no-repeat;
       color: white;
       padding: 5rem 2rem;
       text-align: center;
@@ -53,6 +58,7 @@
     .story {
       background-color: #ffe5ec;
       border-left: 6px solid #ff6f61;
+      animation: fadeIn 1s ease-in;
     }
 
     .gallery {
@@ -69,6 +75,11 @@
       width: 100%;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     .terms {
@@ -119,6 +130,11 @@
       right: 20px;
       font-size: 24px;
       cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
 
     @media (max-width: 600px) {
@@ -175,10 +191,10 @@
   <section id="gallery" class="gallery">
     <h2>Thrifted & Classy Looks</h2>
     <div class="grid">
-      <img src="https://images.unsplash.com/photo-1603252109361-3e3f9e3e3e3e?auto=format&fit=crop&w=800&q=80" alt="Kitenge streetwear" />
-      <img src="https://images.unsplash.com/photo-1612197524245-9e6c6e3d9f7d?auto=format&fit=crop&w=800&q=80" alt="Maasai inspired chic" />
-      <img src="https://images.unsplash.com/photo-1585386959984-a415522b831c?auto=format&fit=crop&w=800&q=80" alt="Thrifted denim fusion" />
-      <img src="https://images.unsplash.com/photo-1593032465175-7b6f6f6f6f6f?auto=format&fit=crop&w=800&q=80" alt="Urban Kitenge blend" />
+      <img src="https://lucyrootsdenim.com/cdn/shop/products/ankara-leather-ankh-jean-skirt-plus-size-18.jpg" alt="Thrifted denim fusion" />
+      <img src="https://afroculture.net/wp-content/uploads/2017/03/maasai-shuka.jpg" alt="Maasai inspired fashion" />
+      <img src="https://www.hindustantimes.com/ht-img/img/2023/10/15/1600x900/Kibera_Fashion_Week_1697460491589_1697460510564.jpg" alt="Urban Nairobi fashion" />
+      <img src="https://www.vogue.com/images/kenyan-cool-girl-guide.jpg" alt="Kenyan street style" />
     </div>
   </section>
 
